@@ -63,5 +63,39 @@ namespace UnitTestProject1
             //Assert
             Assert.IsFalse(result);
         }
+
+        /// <summary>
+        /// Check Email - ID
+        /// </summary>
+        /// <param name="email"></param>
+        [TestMethod]
+        [DataRow("rani.gupta@gmail.com")]
+        public void GivenEmail_CheckIfValid(string email)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Email(email);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("Ran$ig@gmail.com")]
+        public void GivenEmail_CheckIfNotValid(string email)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Email(email);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }
+
+
