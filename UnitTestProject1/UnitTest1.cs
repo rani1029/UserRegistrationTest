@@ -18,7 +18,23 @@ namespace UnitTestProject1
 
             //Assert
             Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("rani")]
+        public void GivenFirstName_CheckIfInValid(string name)
+        {
+            // Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.FirstName(name);
+
+            //Assert
+            Assert.IsFalse(result);
+
 
         }
+
     }
 }
