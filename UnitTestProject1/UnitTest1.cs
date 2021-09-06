@@ -122,8 +122,38 @@ namespace UnitTestProject1
             //Assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        [DataRow("tyret67ip")]
+        public void GivenPassword_Min8Chars_CheckIfValid(string password)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Password(password);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("hhdkr")]
+        public void GivenPassword_Min8Chars_CheckIfNotValid(string password)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Password(password);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }
+
+
 
 
 
