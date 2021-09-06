@@ -35,6 +35,33 @@ namespace UnitTestProject1
 
 
         }
+        [TestMethod]
+        [DataRow("Gupta")]
+        public void GivenLastName_CheckIfValid(string name)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
 
+            //Act
+            bool result = validation.LastName(name);
+
+            //Assert
+            Assert.IsTrue(result);
+
+        }
+
+        [TestMethod]
+        [DataRow("gupta")]
+        public void GivenLastName_CheckIfInValid(string name)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.LastName(name);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }
