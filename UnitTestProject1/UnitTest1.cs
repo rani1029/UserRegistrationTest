@@ -95,7 +95,36 @@ namespace UnitTestProject1
             //Assert
             Assert.IsFalse(result);
         }
+        [TestMethod]
+        [DataRow("91 9098638600")]
+        public void GivenMobile_CheckIfValid(string mobile)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Mobile(mobile);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("9099096400")]
+        public void GivenMobile_CheckIfNotValid(string mobile)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Mobile(mobile);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }
+
+
 
 

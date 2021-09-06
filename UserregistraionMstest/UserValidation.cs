@@ -9,6 +9,9 @@ namespace UserregistraionMstest
     {
         const string REGEX_NAME = "^[A-Z]{1}[A-Za-z]{2,}";
         const string REGEX_EMAIL_ID = @"^[A-Za-z0-9]+([\.+\-_][A-Za-z0-9]+)*@[a-zA-Z0-9]+\.?[A-Za-z]+\.?[A-Za-z]{2,}$";
+        const string REGEX_MOBILE_NUMBER = "^[1-9]{1,2}[ ][1-9]{1}[0-9]{9}$";
+
+
         public bool FirstName(string firstName)
         {
 
@@ -29,6 +32,11 @@ namespace UserregistraionMstest
         {
             //Return True or False
             return Regex.IsMatch(email, REGEX_EMAIL_ID);
+        }
+        public bool Mobile(string mobile)
+        {
+            //Return True or False
+            return Regex.IsMatch(mobile, REGEX_MOBILE_NUMBER);
         }
     }
 }
