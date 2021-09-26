@@ -91,7 +91,7 @@ namespace UnitTestProject1
         [TestMethod]
         [DataRow("Ran$ig@gmail.com")]
         [DataRow("Ran$i@g@gmail.com")]
-        [DataRow("rani")]
+        [DataRow("ranig")]
         [DataRow("rani@.com.com")]
         [DataRow("rani%gp@gmail.com")]
         [DataRow("rani@gmail.com.bi.ku")]
@@ -137,34 +137,6 @@ namespace UnitTestProject1
             //Assert
             Assert.IsFalse(result);
         }
-        ////uc-6 should have atleat one upper case charactor
-        //[TestMethod]
-        //[DataRow("tyDFret67ip")]
-        //public void GivenPasswordAtLeast_OneUpperCAse_CheckIfValid(string password)
-        //{
-        //    //Arrange
-        //    UserValidation validation = new UserValidation();
-
-        //    //Act
-        //    bool result = validation.Password(password);
-
-        //    //Assert
-        //    Assert.IsTrue(result);
-        //}
-
-        //[TestMethod]
-        //[DataRow("hhdkr4gkhg#j")]
-        //public void GivenPasswordAtLeast_OneUpperCAse_CheckIfNotValid(string password)
-        //{
-        //    //Arrange
-        //    UserValidation validation = new UserValidation();
-
-        //    //Act
-        //    bool result = validation.Password(password);
-
-        //    //Assert
-        //    Assert.IsFalse(result);
-        //}
 
 
     }
