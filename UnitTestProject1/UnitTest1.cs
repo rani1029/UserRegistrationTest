@@ -70,6 +70,12 @@ namespace UnitTestProject1
         /// <param name="email"></param>
         [TestMethod]
         [DataRow("rani.gupta@gmail.com")]
+        [DataRow("rani@gmail.com")]
+        [DataRow("rani.gp@gmail.com")]
+        [DataRow("rani-100@gmail.com")]
+        [DataRow("rani@gmail.net")]
+        [DataRow("rani.gp@gmail.com.com")]
+        [DataRow("rani@1.com")]
         public void GivenEmail_CheckIfValid(string email)
         {
             //Arrange
@@ -84,6 +90,15 @@ namespace UnitTestProject1
 
         [TestMethod]
         [DataRow("Ran$ig@gmail.com")]
+        [DataRow("Ran$i@g@gmail.com")]
+        [DataRow("rani")]
+        [DataRow("rani@.com.com")]
+        [DataRow("rani%gp@gmail.com")]
+        [DataRow("rani@gmail.com.bi.ku")]
+        [DataRow("rani.gp@gmail.com.6t")]
+        [DataRow("rani()*@gmail.com")]
+        [DataRow(".rani@gmail.com")]
+        [DataRow("rani..gp@gmail.com")]
         public void GivenEmail_CheckIfNotValid(string email)
         {
             //Arrange
@@ -122,34 +137,36 @@ namespace UnitTestProject1
             //Assert
             Assert.IsFalse(result);
         }
+        ////uc-6 should have atleat one upper case charactor
+        //[TestMethod]
+        //[DataRow("tyDFret67ip")]
+        //public void GivenPasswordAtLeast_OneUpperCAse_CheckIfValid(string password)
+        //{
+        //    //Arrange
+        //    UserValidation validation = new UserValidation();
 
-        [TestMethod]
-        [DataRow("tyret67ip")]
-        public void GivenPassword_Min8Chars_CheckIfValid(string password)
-        {
-            //Arrange
-            UserValidation validation = new UserValidation();
+        //    //Act
+        //    bool result = validation.Password(password);
 
-            //Act
-            bool result = validation.Password(password);
+        //    //Assert
+        //    Assert.IsTrue(result);
+        //}
 
-            //Assert
-            Assert.IsTrue(result);
-        }
+        //[TestMethod]
+        //[DataRow("hhdkr4gkhg#j")]
+        //public void GivenPasswordAtLeast_OneUpperCAse_CheckIfNotValid(string password)
+        //{
+        //    //Arrange
+        //    UserValidation validation = new UserValidation();
 
-        [TestMethod]
-        [DataRow("hhdkr")]
-        public void GivenPassword_Min8Chars_CheckIfNotValid(string password)
-        {
-            //Arrange
-            UserValidation validation = new UserValidation();
+        //    //Act
+        //    bool result = validation.Password(password);
 
-            //Act
-            bool result = validation.Password(password);
+        //    //Assert
+        //    Assert.IsFalse(result);
+        //}
 
-            //Assert
-            Assert.IsFalse(result);
-        }
+
     }
 }
 
