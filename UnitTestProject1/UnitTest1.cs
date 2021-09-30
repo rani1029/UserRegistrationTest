@@ -137,10 +137,10 @@ namespace UnitTestProject1
             //Assert
             Assert.IsFalse(result);
         }
-
+        //uc 7 atleast one numeric value
         [TestMethod]
         [DataRow("ShhAG769jh")]
-        public void GivenPasswordOneUppercase_CheckIfValid(string password)
+        public void GivenPasswordOneNumericvalue_CheckIfValid(string password)
         {
             //Arrange
             UserValidation validation = new UserValidation();
@@ -153,8 +153,8 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        [DataRow("hgfyhh769jh")]
-        public void GivenPasswordOneUppercase_CheckIfNotValid(string password)
+        [DataRow("hgfyhhfdHGjh")]
+        public void GivenPasswordOneNumeric_CheckIfNotValid(string password)
         {
             //Arrange
             UserValidation validation = new UserValidation();

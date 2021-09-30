@@ -10,7 +10,7 @@ namespace UserregistraionMstest
         const string REGEX_NAME = "^[A-Z]{1}[A-Za-z]{2,}";
         const string REGEX_EMAIL_ID = @"^[A-Za-z0-9]+([\.+\-_][A-Za-z0-9]+)*@[a-zA-Z0-9]+\.?[A-Za-z]+\.?[A-Za-z]{2,}$";
         const string REGEX_MOBILE_NUMBER = "^[1-9]{1,2}[ ][1-9]{1}[0-9]{9}$";
-        const string REGEX_PASSWORD = "^[A-Z]+[a-z0-9].{7,}$";
+        const string REGEX_PASSWORD = "^[A-Z0-9]+[a-z].{7,}$";
 
         public bool FirstName(string firstName)
         {
