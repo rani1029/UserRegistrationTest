@@ -138,8 +138,35 @@ namespace UnitTestProject1
             Assert.IsFalse(result);
         }
 
+        [TestMethod]
+        [DataRow("ShhAG769jh")]
+        public void GivenPasswordOneUppercase_CheckIfValid(string password)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
 
+            //Act
+            bool result = validation.Password(password);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("hgfyhh769jh")]
+        public void GivenPasswordOneUppercase_CheckIfNotValid(string password)
+        {
+            //Arrange
+            UserValidation validation = new UserValidation();
+
+            //Act
+            bool result = validation.Password(password);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
+
 }
 
 
